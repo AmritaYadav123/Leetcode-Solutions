@@ -1,13 +1,15 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int allXOR=0;
+        int n= nums.length;
+        int expected=0;
+        int actual=0;
 
-        for(int i=0;i<=nums.length;i++)
-        {allXOR= allXOR^i;}
+        for(int i=0;i<=n;i++)
+        {expected+=i;}
 
         for(int num:nums)
-        {allXOR= allXOR^num;}
+        {actual+=num;}
 
-        return allXOR;
+        return expected-actual;
     }
 }
